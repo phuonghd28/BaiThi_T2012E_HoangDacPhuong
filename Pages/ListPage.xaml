@@ -10,8 +10,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Custom:DataGrid  x:Name="ListData" HorizontalAlignment="Left" Height="424" Margin="46,222,0,0" VerticalAlignment="Top" Width="657" SelectionMode="Single"/>
-        <Button Content="Create Contact" Margin="57,721,0,0" VerticalAlignment="Top" Click="Handle_Create"/>
-        <Button Content="Search" Margin="168,102,0,0" VerticalAlignment="Top" Width="127"/>
+        <Custom:DataGrid  x:Name="ListData" HorizontalAlignment="Left" Height="273" Margin="168,227,0,0" VerticalAlignment="Top" Width="313" SelectionMode="Single"/>
+        <Button Content="Create Contact" Margin="368,157,0,0" VerticalAlignment="Top" Click="Handle_Create"/>
+        <Button Content="Search" Margin="368,98,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click"/>
+        <TextBox x:Name="searchName" HorizontalAlignment="Left" Margin="170,99,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" PlaceholderText="Search by name" />
     </Grid>
 </Page>

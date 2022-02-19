@@ -2,6 +2,7 @@
 using SQLitePCL;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +51,32 @@ namespace BaiThi.Database
                     }
                 }
                 return contacts;
+        }
+
+        public List<Contact> FindByName(string Name)
+        {
+
+            var list = new List<Contact>();
+            try
+            {
+                SQLiteConnection cnn = new SQLiteConnection("lab3.db");
+                using (var statement = cnn.Prepare($"select * from contacts where Name Like '%{Name}%'"))
+                {
+                    while (statement.Step() == SQLiteResult.ROW)
+                    {
+                        var name = (string)statement["Name"];
+                        var phone = (string)statement["PhoneNumber"];
+                        var obj = new Contact(name, phone);
+                        list.Add(obj);
+                    }
+                }
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Co loi list" + ex);
+                return null;
+            }
         }
 
     }

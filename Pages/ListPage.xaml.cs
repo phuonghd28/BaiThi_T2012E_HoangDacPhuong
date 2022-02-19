@@ -1,4 +1,5 @@
 ﻿using BaiThi.Database;
+using BaiThi.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -38,6 +39,12 @@ namespace BaiThi.Pages
         private void Handle_Create(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Pages.CreatePage));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<Contact> listContactByName = database.FindByName(searchName.Text);
+            ListData.ItemsSource = listContactByName;
         }
     }
 }
