@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="BaiThi.Pages.ListPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BaiThi.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:Custom="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Custom:DataGrid  x:Name="ListData" HorizontalAlignment="Left" Height="424" Margin="46,222,0,0" VerticalAlignment="Top" Width="657" SelectionMode="Single"/>
+        <Button Content="Create Contact" Margin="57,721,0,0" VerticalAlignment="Top" Click="Handle_Create"/>
+        <Button Content="Search" Margin="168,102,0,0" VerticalAlignment="Top" Width="127"/>
+    </Grid>
+</Page>
